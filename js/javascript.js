@@ -177,13 +177,13 @@ function compareScissors(player,cpu){ //Compare Scissors vs Cpu
 
 function finshGame(player,cpu){ //Display the winner in alert
     if(player > cpu){
-        alert("You've Won!" + playerScore
-             + " to " + cpuScore +"Click Try Again!");
+        alert("You've Won! " + playerScore
+             + " to " + cpuScore +" Click Try Again!");
     }else if(player < cpu){
-        alert("You've Lost!"+ playerScore
-        + " to " + cpuScore + "Click Try Again!");
+        alert("You've Lost! "+ playerScore
+        + " to " + cpuScore + " Click Try Again!");
     }else if (player == cpu){
-        alert("It's a Draw!"+ playerScore
+        alert("It's a Draw! "+ playerScore
         + " to " + cpuScore + " Click Try Again!");
     }
     }
