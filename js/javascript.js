@@ -34,9 +34,11 @@ function gameLoopRock(){  //run the game if rock is chosen
     }else if(gameScore == 5) {
         gameScore += 1;
         compareRock(pRockMaker(),computerPlay());
+        document.getElementById("gs").innerHTML = 
+        "GAME OVER";
         document.getElementById("tryAgain").appendChild(taButton);
         finshGame(playerScore,cpuScore);
-    }else{return;}    
+    }    
 }       
 
 function gameLoopPaper(){  //run the game if Paper is chosen
@@ -48,8 +50,11 @@ function gameLoopPaper(){  //run the game if Paper is chosen
     }else if(gameScore == 5) {
         gameScore += 1;
         comparePaper(pPaperMaker(),computerPlay());
+        document.getElementById("gs").innerHTML = 
+        "GAME OVER";
         document.getElementById("tryAgain").appendChild(taButton);
         finshGame(playerScore,cpuScore);
+        
     }    
 }
 
@@ -63,7 +68,9 @@ function gameLoopScissors(){  //run the game is Scissors is chosen
     }else if(gameScore == 5) {
         gameScore += 1;
         compareScissors(pScissorsMaker(),computerPlay());
-        document.getElementById("tryAgain").appendChild(taButton);
+        document.getElementById("gs").innerHTML = 
+        "GAME OVER";
+        document.getElementById("tryAgain").appendChild(taButton);       
         finshGame(playerScore,cpuScore);
     }    
 }
