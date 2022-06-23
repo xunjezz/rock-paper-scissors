@@ -21,6 +21,7 @@ function gameLoopRock(){
         compareRock(pRockMaker(),computerPlay());
         document.getElementById("gs").innerHTML = "Round:  " + gameScore;
     }else if(gameScore == 5) {
+        gameScore += 1;
         compareRock(pRockMaker(),computerPlay());
         document.getElementById("tryAgain").appendChild(taButton);
         
@@ -48,6 +49,7 @@ function gameLoopScissors(){
         compareScissors(pScissorsMaker(),computerPlay());
         document.getElementById("gs").innerHTML = "Round:  " + gameScore;
     }else if(gameScore == 5) {
+        gameScore += 1;
         compareScissors(pScissorsMaker(),computerPlay());
         document.getElementById("tryAgain").appendChild(taButton);
         
