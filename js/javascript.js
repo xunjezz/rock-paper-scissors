@@ -1,4 +1,4 @@
-let playerScore = 0;
+let playerScore = 0;  //declare the scores, round, and try again button
 let cpuScore = 0;
 let gameScore = 1;
 const taButton = 
@@ -7,19 +7,26 @@ const taButton =
         taButton.addEventListener("click", reloadPage);
 
 
-document.getElementById("ps").innerHTML = "Player Score:  " + playerScore;
-document.getElementById("cpus").innerHTML = "CPU Score:  " + cpuScore;
-document.getElementById("gs").innerHTML = "Round:  " + gameScore;
+document.getElementById("ps").innerHTML =  //display scores and round
+        "Player Score:  " + playerScore;
+document.getElementById("cpus").innerHTML = 
+        "CPU Score:  " + cpuScore;
+document.getElementById("gs").innerHTML = 
+        "Round:  " + gameScore;
 
-document.getElementById("clickRock").onclick = gameLoopRock;
-document.getElementById("clickPaper").onclick = gameLoopPaper;
-document.getElementById("clickScissors").onclick = gameLoopScissors;     
+document.getElementById("clickRock").onclick = // get click input
+        gameLoopRock;                          //rock
+document.getElementById("clickPaper").onclick = //get click input
+        gameLoopPaper;                          //paper
+document.getElementById("clickScissors").onclick = //get click input
+        gameLoopScissors;                          //scissors
 
-function gameLoopRock(){
+function gameLoopRock(){  //run the game if rock is chosen
     if(gameScore < 5){
         gameScore += 1;
         compareRock(pRockMaker(),computerPlay());
-        document.getElementById("gs").innerHTML = "Round:  " + gameScore;
+        document.getElementById("gs").innerHTML = 
+                "Round:  " + gameScore;
     }else if(gameScore == 5) {
         gameScore += 1;
         compareRock(pRockMaker(),computerPlay());
@@ -28,12 +35,12 @@ function gameLoopRock(){
     }else{return;}    
 }       
 
-function gameLoopPaper(){
+function gameLoopPaper(){  //run the game if Paper is chosen
     if(gameScore < 5){
         gameScore += 1;
         comparePaper(pPaperMaker(),computerPlay());
-        document.getElementById("gs").innerHTML = "Round:  " + gameScore;
-        
+        document.getElementById("gs").innerHTML = 
+                "Round:  " + gameScore;
     }else if(gameScore == 5) {
         gameScore += 1;
         comparePaper(pPaperMaker(),computerPlay());
@@ -43,11 +50,12 @@ function gameLoopPaper(){
 }
 
 
-function gameLoopScissors(){
+function gameLoopScissors(){  //run the game is Scissors is chosen
     if(gameScore < 5){
         gameScore += 1;
         compareScissors(pScissorsMaker(),computerPlay());
-        document.getElementById("gs").innerHTML = "Round:  " + gameScore;
+        document.getElementById("gs").innerHTML = 
+        "Round:  " + gameScore;
     }else if(gameScore == 5) {
         gameScore += 1;
         compareScissors(pScissorsMaker(),computerPlay());
@@ -58,39 +66,9 @@ function gameLoopScissors(){
     
 
    
-function reloadPage(){
+function reloadPage(){  //function to reload game
     window.location.reload();
-}   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
@@ -103,8 +81,6 @@ function computerPlay() {     //Generate random # between 1-3
         case 3: return "Scissors";
      }
      
-     
-
 }
 
 function pRockMaker(){  // Player Chooses Rock
