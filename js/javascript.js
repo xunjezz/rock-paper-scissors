@@ -1,5 +1,6 @@
 let playerScore = 0;  //declare the scores, round, and try again button
 let cpuScore = 0;
+let drawScore = 0;
 let gameScore = 1;
 const taButton = 
         document.createElement("button");
@@ -11,8 +12,11 @@ document.getElementById("ps").innerHTML =  //display scores and round
         "Player Score:  " + playerScore;
 document.getElementById("cpus").innerHTML = 
         "CPU Score:  " + cpuScore;
+document.getElementById("ds").innerHTML =
+        "Tie:  " + drawScore;
 document.getElementById("gs").innerHTML = 
         "Round:  " + gameScore;
+
 
 document.getElementById("clickRock").onclick = // get click input
         gameLoopRock;                          //rock
@@ -31,7 +35,7 @@ function gameLoopRock(){  //run the game if rock is chosen
         gameScore += 1;
         compareRock(pRockMaker(),computerPlay());
         document.getElementById("tryAgain").appendChild(taButton);
-        
+        finshGame(playerScore,cpuScore);
     }else{return;}    
 }       
 
@@ -45,7 +49,7 @@ function gameLoopPaper(){  //run the game if Paper is chosen
         gameScore += 1;
         comparePaper(pPaperMaker(),computerPlay());
         document.getElementById("tryAgain").appendChild(taButton);
-        
+        finshGame(playerScore,cpuScore);
     }    
 }
 
@@ -60,7 +64,7 @@ function gameLoopScissors(){  //run the game is Scissors is chosen
         gameScore += 1;
         compareScissors(pScissorsMaker(),computerPlay());
         document.getElementById("tryAgain").appendChild(taButton);
-        
+        finshGame(playerScore,cpuScore);
     }    
 }
     
@@ -106,9 +110,11 @@ function pScissorsMaker(){  //Player Chooses Scissors
 function compareRock(player,cpu){ //Compare Rock vs Cpu
     if(player == "Rock" && cpu =="Rock"){
         alert(" You've chosen Rock and so has you opponent, Tie!");
+        drawScore += 1;
         document.getElementById("ps").innerHTML = "Player Score:  " + playerScore;
         document.getElementById("cpus").innerHTML = "CPU Score:  " + cpuScore;
-        
+        document.getElementById("ds").innerHTML = "Tie:  " + drawScore;
+    
     }else if(player == "Rock" && cpu == "Paper"){
         alert("You've chosen Rock and unfortuatly your opponent has chosen Paper, Lose!");
         cpuScore += 1;
@@ -127,9 +133,11 @@ function compareRock(player,cpu){ //Compare Rock vs Cpu
 function comparePaper(player,cpu){ //Compare Paper vs Cpu
     if(player == "Paper" && cpu =="Paper"){
         alert(" You've chosen Paper and so has you opponent, Tie!");
+        drawScore += 1;
         document.getElementById("ps").innerHTML = "Player Score:  " + playerScore;
         document.getElementById("cpus").innerHTML = "CPU Score:  " + cpuScore;
-        
+        document.getElementById("ds").innerHTML = "Tie:  " + drawScore;
+    
     }else if(player == "Paper" && cpu == "Scissors"){
         alert("You've chosen Paper and unfortuatly your opponent has chosen Scissors, Lose!");
         cpuScore += 1;
@@ -148,9 +156,10 @@ function comparePaper(player,cpu){ //Compare Paper vs Cpu
 function compareScissors(player,cpu){ //Compare Scissors vs Cpu
     if(player == "Scissors" && cpu =="Scissors"){
         alert(" You've chosen Scissors and so has you opponent, Tie!");        
+        drawScore += 1;
         document.getElementById("ps").innerHTML = "Player Score:  " + playerScore;
         document.getElementById("cpus").innerHTML = "CPU Score:  " + cpuScore; 
-        
+        document.getElementById("ds").innerHTML = "Tie:  " + drawScore;
     }else if(player == "Scissors" && cpu == "Rock"){
         alert("You've chosen Scissors and unfortuatly your opponent has chosen Rock, Lose!");
         cpuScore += 1;     
@@ -165,3 +174,16 @@ function compareScissors(player,cpu){ //Compare Scissors vs Cpu
         
     }
 }
+
+function finshGame(player,cpu){ //Display the winner in alert
+    if(player > cpu){
+        alert("You've Won!" + playerScore
+             + " to " + cpuScore +"Click Try Again!");
+    }else if(player < cpu){
+        alert("You've Lost!"+ playerScore
+        + " to " + cpuScore + "Click Try Again!");
+    }else if (player == cpu){
+        alert("It's a Draw!"+ playerScore
+        + " to " + cpuScore + " Click Try Again!");
+    }
+    }
