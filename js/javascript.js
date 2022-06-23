@@ -1,20 +1,56 @@
 let playerScore = 0;
 let cpuScore = 0;
 let gameScore = 0;
-
+const taButton = 
+        document.createElement("button");
+        taButton.innerHTML = "Try Again?";
+        taButton.addEventListener("click", reloadPage);
 
 
 document.getElementById("ps").innerHTML = "Player Score:  " + playerScore;
 document.getElementById("cpus").innerHTML = "CPU Score:  " + cpuScore;
 document.getElementById("gs").innerHTML = "Round:  " + gameScore;
 
-document.getElementById("clickRock").onclick = function(){compareRock(pRockMaker(),computerPlay())};
-document.getElementById("clickPaper").onclick = function(){comparePaper(pPaperMaker(),computerPlay())};
-document.getElementById("clickScissors").onclick = function(){compareScissors(pScissorsMaker(),computerPlay())};     
+document.getElementById("clickRock").onclick = gameLoopRock;
+document.getElementById("clickPaper").onclick = gameLoopPaper;
+document.getElementById("clickScissors").onclick = gameLoopScissors;     
+
+function gameLoopRock(){
+    if(gameScore < 5){
+        compareRock(pRockMaker(),computerPlay());
+    }else if(gameScore == 5) {
+        gameScore += 1;
+        document.getElementById("tryAgain").appendChild(taButton);
+        
+    }    
+}       
+
+function gameLoopPaper(){
+    if(gameScore < 5){
+        comparePaper(pPaperMaker(),computerPlay());
+    }else if(gameScore == 5) {
+        gameScore += 1;
+        document.getElementById("tryAgain").appendChild(taButton);
+        
+    }    
+}
 
 
+function gameLoopScissors(){
+    if(gameScore < 5){
+        compareScissors(pScissorsMaker(),computerPlay());
+    }else if(gameScore == 5) {
+        gameScore += 1;
+        document.getElementById("tryAgain").appendChild(taButton);
+        
+    }    
+}
+    
+
    
-   
+function reloadPage(){
+    window.location.reload();
+}   
 
 
 
