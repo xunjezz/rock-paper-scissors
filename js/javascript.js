@@ -31,17 +31,19 @@ clickedScissors.addEventListener('click', playerClicked);
 
 function playerClicked(e){
     computerPlay();
-    if((gameScore >=5 && playerScore >= 3) && (playerScore > cpuScore) ){
+
+    if((gameScore >=5 && playerScore >=  3) && (playerScore > cpuScore) ){
         gameScoreCard.innerHTML = 'GAME OVER <br><br>';
         gameScoreCard.appendChild(taButton);
         alert(`GameOver You Win: ${playerScore} to ${cpuScore}, it's OVER! Click Try Again!`);
-    }else if((gameScore>=5 && cpuScore >=3) && (cpuScore >  playerScore)){
+    }else if((gameScore>=5 && cpuScore >= 3) && (cpuScore >  playerScore)){
         gameScoreCard.innerHTML = 'GAME OVER <br><br>';
         gameScoreCard.appendChild(taButton);
         alert(`GameOver You Lose: ${cpuScore} to ${playerScore}, it's OVER! Click Try Again!`);
-    }else{
     
-        if (e.target.id == cpu){
+    }else{
+        
+        if(e.target.id == cpu){
             alert(`Both you and your opponent chose ${e.target.id}`);
             tieScoreCard.innerText = `Ties:  ${drawScore += 1}`  
         }else if(e.target.id == "Rock" && cpu == "Scissors"){
@@ -62,14 +64,16 @@ function playerClicked(e){
         }else if(e.target.id == "Scissors" && cpu == "Rock"){
             alert("You've chosen Scissors and unfortuatly your opponent has chosen Rock, Lose!");
             cpuScoreCard.innerText = `CPU Score:  ${cpuScore += 1}`
-        }        
-        
-        gameScoreCard.innerText =` Round:  ${gameScore += 1}`;
-        
-        
     }
-
+    
+        gameScoreCard.innerText =` Round:  ${gameScore += 1}`;
+    }
 }
+        
+        
+
+
+
 
 function computerPlay() {     //Generate random # between 1-3
     let randNum = Math.floor(Math.random() * 3 ) + 1;             
