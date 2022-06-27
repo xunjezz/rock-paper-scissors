@@ -1,3 +1,22 @@
 body{
   background-image: url(images/Grass-export.png);  
 }
+
+h1{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+ul{
+  list-style-type: none;
+  display:flex;
+  justify-content: space-between;
+  width:100vw;
+}
+
+#container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
