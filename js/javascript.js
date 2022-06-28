@@ -41,7 +41,7 @@ function playerClicked(e){
     
         
         if(e.target.id == cpu){    //run the game and show results                       
-            tieScoreCard.innerText = `aTies:  ${drawScore += 1}`
+            tieScoreCard.innerText = `Ties:  ${drawScore += 1}`
             cpuChoiceText.innerHTML = `CPU Chooses:<h3>  TIE!</h3>`;
         }else if(e.target.id == "Rock" && cpu == "Scissors"){
             playerScoreCard.innerText = `Player Score:  ${playerScore += 1}`;
