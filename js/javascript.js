@@ -26,6 +26,7 @@ const cpuChoiceText = document.createElement('p');
 cpuChoiceText.innerText = "CPU Chooses:";
 cpuChoice.appendChild(cpuChoiceText);
 const img = document.querySelector('img');
+const cpuPic = document.getElementById('cpu-pic');
 
 clickedRock = document.querySelector('#Rock'); //get click from input buttons
 clickedRock.addEventListener('click', playerClicked);
@@ -40,11 +41,14 @@ function playerClicked(e){
     if((gameScore >=5 && playerScore >=  3) && (playerScore > cpuScore) ){
         gameScoreCard.innerText = '';
         gameScoreCard.appendChild(taButton);
-        cpuChoiceText.innerHTML = `<h1>GAME OVER!!</h1>`
+        cpuChoiceText.innerHTML = `<h1>GAME OVER!!</h1>`;
+        cpuPic.innerText = `YOU WIN!`;
+        
     }else if((gameScore>=5 && cpuScore >= 3) && (cpuScore >  playerScore)){
         gameScoreCard.innerText = '';
         gameScoreCard.appendChild(taButton);
-        cpuChoiceText.innerHTML = `<h1>GAME OVER!!</h1>`
+        cpuChoiceText.innerHTML = `<h1>GAME OVER!!</h1>`;
+        cpuPic.innerText = 'YOU LOSE!';
     }else{
         
         if(e.target.id == cpu){    //run the game and show results                       

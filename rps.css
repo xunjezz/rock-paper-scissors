@@ -100,3 +100,6 @@ button{
 h4{
   text-shadow: 0 0 15px #f3eeee, 0 0 5px #3c036b ;
 }
+#cpu-pic{
+  font-size: 3em;
+}
