@@ -166,16 +166,19 @@ function changeImage(e){
 function playSound(e){
     if(e.target.id == "Rock"){
         sounds.forEach((el) => {el.pause(); el.currentTime = 0;});
+        sounds[4].load()
         sounds[4].play();
         sounds[4].currentTime = 0;
         
     }else if(e.target.id == "Paper"){
         sounds.forEach((el) =>{el.pause(); el.currentTime = 0;});
+        sounds[4].load()
         sounds[4].play();
         sounds[4].currentTime = 0;
         
     }else if(e.target.id == "Scissors"){
         sounds.forEach((el) =>{el.pause(); el.currentTime = 0;});        
+        sounds[4].load()
         sounds[4].play();
         sounds[4].currentTime = 0;
         
