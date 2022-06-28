@@ -19,6 +19,10 @@ images[5].src = 'images/ScissorsClicked-export.png';
 const sounds = [];
 sounds[0] = new Audio();
 sounds[0].src = 'sounds/rock.mp3';
+sounds[1] = new Audio();
+sounds[1].src = 'sounds/paper.mp3';
+sounds[2] = new Audio();
+sounds[2].src = 'sounds/scissors.mp3';
 const taButton = document.createElement('button');
         taButton.innerText = "Try Again?";
         taButton.addEventListener("click", reloadPage);
@@ -153,9 +157,19 @@ function changeImage(e){
 // };
 function playSound(e){
     if(e.target.id == "Rock"){
-        
+        sounds.forEach((el) => {el.pause(); el.currentTime = 0;});
         sounds[0].play();
         sounds[0].currentTime = 0;
+        
+    }else if(e.target.id == "Paper"){
+        sounds.forEach((el) =>{el.pause(); el.currentTime = 0;});
+        sounds[1].play();
+        sounds[1].currentTime = 0;
+        
+    }else if(e.target.id == "Scissors"){
+        sounds.forEach((el) =>{el.pause(); el.currentTime = 0;});        
+        sounds[2].play();
+        sounds[2].currentTime = 0;
         
     }
 }
