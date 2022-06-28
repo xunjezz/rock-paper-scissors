@@ -40,6 +40,12 @@ h2{
   align-items: center;
   margin:0;
 }
+  .cpu{
+  display:flex;
+  height: 10em;
+  align-items: center;
+}
+
   ul{
   list-style-type: none;
   display:flex;

@@ -21,6 +21,10 @@ container.appendChild(tieScoreCard);
 const gameScoreCard = document.createElement('p'); 
 gameScoreCard.innerText = `Round:  ${gameScore}`;
 container.appendChild(gameScoreCard);       
+const cpuChoice = document.getElementById('cpu-choice');
+const cpuChoiceText = document.createElement('p');
+cpuChoiceText.innerText = "CPU Chooses:";
+cpuChoice.appendChild(cpuChoiceText);
 
 clickedRock = document.querySelector('#Rock'); //get click from input buttons
 clickedRock.addEventListener('click', playerClicked);
