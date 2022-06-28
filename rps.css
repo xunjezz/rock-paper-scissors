@@ -16,8 +16,12 @@ left: 0;
 margin: 0;
 padding: 0;
 touch-action: manipulation;
+
   
   
+}
+*{
+  border: 1px solid red;
 }
 
 .main-container{
@@ -28,11 +32,13 @@ h1{
   display:flex;
   justify-content: center;
   align-items: center;
+  margin:0;
 }
 h2{
   display:flex;
   justify-content: center;
   align-items: center;
+  margin:0;
 }
   ul{
   list-style-type: none;
@@ -59,6 +65,7 @@ li{
 p{
   font-size: 1.5rem;
   font-weight: 800;
+  margin:0;
   
   
 
@@ -72,4 +79,8 @@ button{
   border-color: transparent;
   border-radius: 4px;
   text-shadow: 0 0 15px #f3eeee, 0 0 5px #3c036b ;
+}
+
+#cpu{
+  height:10em;
 }
