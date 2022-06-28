@@ -40,15 +40,14 @@ function playerClicked(e){
     if((gameScore >=5 && playerScore >=  3) && (playerScore > cpuScore) ){
         gameScoreCard.innerText = '';
         gameScoreCard.appendChild(taButton);
-        alert(`GameOver You Win: ${playerScore} to ${cpuScore}, it's OVER! Click Try Again!`);
+        cpuChoiceText.innerHTML = `<h1>GAME OVER!!</h1>`
     }else if((gameScore>=5 && cpuScore >= 3) && (cpuScore >  playerScore)){
         gameScoreCard.innerText = '';
         gameScoreCard.appendChild(taButton);
-        alert(`GameOver You Lose: ${cpuScore} to ${playerScore}, it's OVER! Click Try Again!`);
-    
+        cpuChoiceText.innerHTML = `<h1>GAME OVER!!</h1>`
     }else{
         
-        if(e.target.id == cpu){
+        if(e.target.id == cpu){    //run the game and show results                       
             tieScoreCard.innerText = `Ties:  ${drawScore += 1}`
             cpuChoiceText.innerHTML = `CPU Chooses:<h3>  TIE!</h3>`;
         }else if(e.target.id == "Rock" && cpu == "Scissors"){
