@@ -44,25 +44,25 @@ function playerClicked(e){
     }else{
         
         if(e.target.id == cpu){
-            alert(`Both you and your opponent chose ${e.target.id}`);
+            // alert(`Both you and your opponent chose ${e.target.id}`);
             tieScoreCard.innerText = `Ties:  ${drawScore += 1}`  
         }else if(e.target.id == "Rock" && cpu == "Scissors"){
-            alert("You've chosen Rock and your opponent has chosen Scissors, Win!!");
+            // alert("You've chosen Rock and your opponent has chosen Scissors, Win!!");
             playerScoreCard.innerText = `Player Score:  ${playerScore += 1}`
         }else if(e.target.id == "Rock" && cpu == "Paper"){
-            alert("You've chosen Rock and unfortuatly your opponent has chosen Paper, Lose!");
+            // alert("You've chosen Rock and unfortunatly your opponent has chosen Paper, Lose!");
             cpuScoreCard.innerText = `CPU Score:  ${cpuScore += 1}`;
         }else if(e.target.id == "Paper" && cpu == "Rock"){
-            alert("You've chosen Paper and your opponent has chosen Rock, Win!!");
+            // alert("You've chosen Paper and your opponent has chosen Rock, Win!!");
             playerScoreCard.innerText = `Player Score:  ${playerScore += 1}`
         }else if(e.target.id == "Paper" && cpu == "Scissors"){
-            alert("You've chosen Paper and unfortuatly your opponent has chosen Scissors, Lose!");
+            // alert("You've chosen Paper and unfortunatly your opponent has chosen Scissors, Lose!");
             cpuScoreCard.innerText = `CPU Score:  ${cpuScore += 1}`
         }else if(e.target.id == "Scissors" && cpu == "Paper"){
-            alert("You've chosen Scissors and your opponent has chosen Paper, Win!!");
+            // alert("You've chosen Scissors and your opponent has chosen Paper, Win!!");
             playerScoreCard.innerText = `Player Score:  ${playerScore += 1}`
         }else if(e.target.id == "Scissors" && cpu == "Rock"){
-            alert("You've chosen Scissors and unfortuatly your opponent has chosen Rock, Lose!");
+            // alert("You've chosen Scissors and unfortunatly your opponent has chosen Rock, Lose!");
             cpuScoreCard.innerText = `CPU Score:  ${cpuScore += 1}`
     }
     
