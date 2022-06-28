@@ -93,13 +93,16 @@ function playerClicked(e){
 function computerPlay() {     //Generate random # between 1-3
     let randNum = Math.floor(Math.random() * 3 ) + 1;             
         if(randNum == 1){  //create the CPU pick
-            img.src = "./images/cpuRock-export.png"
+            img.src = "./images/clear-export.png";
+            setTimeout(() =>{ img.src = "./images/cpuRock-export.png"},150)
             cpu ="Rock";       
         }else if(randNum == 2){
-            img.src = "./images/cpuPaper-export.png"
+            img.src = "./images/clear-export.png";
+            setTimeout(() =>{ img.src = "./images/cpuPaper-export.png"},150)
             cpu = "Paper";
         }else if(randNum == 3){
-            img.src = "./images/cpuScissors-export.png"
+            img.src = "./images/clear-export.png";
+            setTimeout(() =>{ img.src = "./images/cpuPaper-export.png"},150)
             cpu = "Scissors";
         }      
         return cpu;      
@@ -150,11 +153,6 @@ function changeImage(e){
     }
 }   
 
-// const rockSound = new Audio();
-// rockSound.src ="/sounds/rock.mp3";
-// rockSound.onecanplaythrough = function(){
-//     rockSound.readyToRock = true;
-// };
 function playSound(e){
     if(e.target.id == "Rock"){
         sounds.forEach((el) => {el.pause(); el.currentTime = 0;});
