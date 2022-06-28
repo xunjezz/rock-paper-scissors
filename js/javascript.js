@@ -1,5 +1,4 @@
-// let playerScore = 0;  //declare the scores, round, and try again button
-let cpuScore = 0;
+let cpuScore = 0;  //declare the scores, round, and try again button
 let drawScore = 0;
 let gameScore = 1;
 let playerScore = 0;
@@ -23,10 +22,11 @@ gameScoreCard.innerText = `Round:  ${gameScore}`;
 container.appendChild(gameScoreCard);       
 const cpuChoice = document.getElementById('cpu-choice');
 const cpuChoiceText = document.createElement('p');
-cpuChoiceText.innerText = "CPU Chooses:";
+cpuChoiceText.innerText = 'CPU Chooses:';
 cpuChoice.appendChild(cpuChoiceText);
 const img = document.querySelector('img');
 const cpuPic = document.getElementById('cpu-pic');
+
 
 clickedRock = document.querySelector('#Rock'); //get click from input buttons
 clickedRock.addEventListener('click', playerClicked);
@@ -34,20 +34,6 @@ clickedPaper = document.querySelector('#Paper');
 clickedPaper.addEventListener('click', playerClicked);                        
 clickedScissors = document.querySelector('#Scissors');
 clickedScissors.addEventListener('click', playerClicked);
-function checkFinish(player,cpu){
-    if(player == 5){
-        gameScoreCard.innerText = '';
-        gameScoreCard.appendChild(taButton);
-        cpuChoiceText.innerHTML = `<h1>GAME OVER!!</h1>`;
-        cpuPic.innerText = `YOU WIN!`;
-        
-    }else if(cpu == 5){
-        gameScoreCard.innerText = '';
-        gameScoreCard.appendChild(taButton);
-        cpuChoiceText.innerHTML = `<h1>GAME OVER!!</h1>`;
-        cpuPic.innerText = 'YOU LOSE!';
-    }
-}
 
 
 function playerClicked(e){
@@ -77,19 +63,15 @@ function playerClicked(e){
             cpuChoiceText.innerHTML = `CPU Chooses:  <h3>CPU WINS!</h3>`;
             
         }
-    
+        
         gameScoreCard.innerText =` Round:  ${gameScore += 1}`;
         checkFinish(playerScore,cpuScore);
 
-}        
-        
-
-
-
-
+    }        
+    
 function computerPlay() {     //Generate random # between 1-3
     let randNum = Math.floor(Math.random() * 3 ) + 1;             
-        if(randNum == 1){
+        if(randNum == 1){  //create the CPU pick
             img.src = "./images/Rock-export.png"
             cpu ="Rock";       
         }else if(randNum == 2){
@@ -100,10 +82,35 @@ function computerPlay() {     //Generate random # between 1-3
             cpu = "Scissors";
         }      
         return cpu;      
-}
+    }
         
 function reloadPage(){  //function to reload game
     window.location.reload();
 }
 
+function checkFinish(player,cpu){ //check for ending conditions
 
+    if(player == 5){
+        gameScoreCard.innerText = '';
+        gameScoreCard.appendChild(taButton);
+        cpuChoiceText.innerHTML = `<h1>GAME OVER!!</h1>`;
+        cpuPic.innerText = `YOU WIN!`;
+        disableButton();
+        
+    }else if(cpu == 5){
+        gameScoreCard.innerText = '';
+        gameScoreCard.appendChild(taButton);
+        cpuChoiceText.innerHTML = `<h1>GAME OVER!!</h1>`;
+        cpuPic.innerText = 'YOU LOSE!';
+        disableButton();
+    }
+}
+function disableButton(){  //disable the inputs after game over
+    
+    document.getElementById('Rock').disabled = true;
+    document.getElementById('Paper').disabled = true;
+    document.getElementById('Scissors').disabled = true;    
+}
+
+    
+    

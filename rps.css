@@ -40,7 +40,7 @@ h2{
   align-items: center;
   margin:0;
 }
-  .cpu{
+.cpu{
   display:flex;
   height: 10em;
   align-items: center;
@@ -102,4 +102,5 @@ h4{
 }
 #cpu-pic{
   font-size: 3em;
+  
 }
