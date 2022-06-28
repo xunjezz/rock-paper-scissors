@@ -25,8 +25,14 @@ h2{
   ul{
   list-style-type: none;
   display:flex;
-  justify-content: space-evenly;
-  width:100vw;
+  align-items: center;
+  justify-content: center;
+  width: 25em;
+  padding: 0;
+  border: 1px solid red;
+}
+li{
+  flex: 1 0 auto;
 }
 
 #container{
