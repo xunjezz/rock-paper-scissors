@@ -53,22 +53,22 @@ function playerClicked(e){
             cpuChoiceText.innerHTML = `CPU Chooses:<h3>  TIE!</h3>`;
         }else if(e.target.id == "Rock" && cpu == "Scissors"){
             playerScoreCard.innerText = `Player Score:  ${playerScore += 1}`;
-            cpuChoiceText.innerHTML = `CPU Chooses:  <h3>WIN!!</h3>`;
+            cpuChoiceText.innerHTML = `CPU Chooses:  <h3>YOU WIN!!</h3>`;
         }else if(e.target.id == "Rock" && cpu == "Paper"){
             cpuScoreCard.innerText = `CPU Score:  ${cpuScore += 1}`;
-            cpuChoiceText.innerHTML= `CPU Chooses:  <h3>LOSE!</h3>`;
+            cpuChoiceText.innerHTML= `CPU Chooses:  <h3>CPU WINS!</h3>`;
         }else if(e.target.id == "Paper" && cpu == "Rock"){
             playerScoreCard.innerText = `Player Score:  ${playerScore += 1}`;
-            cpuChoiceText.innerHTML = `CPU Chooses:  <h3>WIN!!</h3>`;
+            cpuChoiceText.innerHTML = `CPU Chooses:  <h3> YOU WIN!!</h3>`;
         }else if(e.target.id == "Paper" && cpu == "Scissors"){
             cpuScoreCard.innerText = `CPU Score:  ${cpuScore += 1}`;
-            cpuChoiceText.innerHTML = `CPU Chooses:  <h3>LOSE!</h3>`;
+            cpuChoiceText.innerHTML = `CPU Chooses:  <h3>CPU WINS!</h3>`;
         }else if(e.target.id == "Scissors" && cpu == "Paper"){
             playerScoreCard.innerText = `Player Score:  ${playerScore += 1}`;
-            cpuChoiceText.innerHTML = `CPU Chooses:  <h3>WIN!!</h3>`;
+            cpuChoiceText.innerHTML = `CPU Chooses:  <h3>YOU WIN!!</h3>`;
         }else if(e.target.id == "Scissors" && cpu == "Rock"){
             cpuScoreCard.innerText = `CPU Score:  ${cpuScore += 1}`;
-            cpuChoiceText.innerHTML = `CPU Chooses:  <h3>LOSE!</h3>`;
+            cpuChoiceText.innerHTML = `CPU Chooses:  <h3>CPU WINS!</h3>`;
             
         }
     
