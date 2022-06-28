@@ -23,6 +23,12 @@ sounds[1] = new Audio();
 sounds[1].src = 'sounds/paper.mp3';
 sounds[2] = new Audio();
 sounds[2].src = 'sounds/scissors.mp3';
+sounds[4] = new Audio();
+sounds[4].src = 'sounds/plink.flac';
+sounds[5] = new Audio();
+sounds[5].src = 'sounds/win.wav';
+sounds[6] = new Audio();
+sounds[6].src = 'sounds/lose.wav';
 const taButton = document.createElement('button');
         taButton.innerText = "Try Again?";
         taButton.addEventListener("click", reloadPage);
@@ -119,6 +125,8 @@ function checkFinish(player,cpu){ //check for ending conditions
         gameScoreCard.appendChild(taButton);
         cpuChoiceText.innerHTML = `<h1>GAME OVER!!</h1>`;
         cpuPic.innerText = `YOU WIN!`;
+        sounds.forEach((el) => {el.pause(); el.currentTime = 0;});
+        sounds[5].play();
         disableButton();
         
     }else if(cpu == 5){
@@ -126,6 +134,8 @@ function checkFinish(player,cpu){ //check for ending conditions
         gameScoreCard.appendChild(taButton);
         cpuChoiceText.innerHTML = `<h1>GAME OVER!!</h1>`;
         cpuPic.innerText = 'YOU LOSE!';
+        sounds.forEach((el) => {el.pause(); el.currentTime = 0;});
+        sounds[6].play();
         disableButton();
     }
 }
@@ -156,18 +166,18 @@ function changeImage(e){
 function playSound(e){
     if(e.target.id == "Rock"){
         sounds.forEach((el) => {el.pause(); el.currentTime = 0;});
-        sounds[0].play();
-        sounds[0].currentTime = 0;
+        sounds[4].play();
+        sounds[4].currentTime = 0;
         
     }else if(e.target.id == "Paper"){
         sounds.forEach((el) =>{el.pause(); el.currentTime = 0;});
-        sounds[1].play();
-        sounds[1].currentTime = 0;
+        sounds[4].play();
+        sounds[4].currentTime = 0;
         
     }else if(e.target.id == "Scissors"){
         sounds.forEach((el) =>{el.pause(); el.currentTime = 0;});        
-        sounds[2].play();
-        sounds[2].currentTime = 0;
+        sounds[4].play();
+        sounds[4].currentTime = 0;
         
     }
 }
