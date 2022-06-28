@@ -49,15 +49,15 @@ h2{
   list-style-type: none;
   display:flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100vw;
-  padding: 0;
+  padding: 0 1em 0 1em;
   flex:1;
    
 }
 li{
   flex: 0 0 auto;
-  padding: 0 1em 0 1em;
+  padding: 0 0em 0 0em;
   touch-action: manipulation;
 }
 
