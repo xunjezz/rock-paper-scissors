@@ -34,25 +34,28 @@ clickedPaper = document.querySelector('#Paper');
 clickedPaper.addEventListener('click', playerClicked);                        
 clickedScissors = document.querySelector('#Scissors');
 clickedScissors.addEventListener('click', playerClicked);
-
-function playerClicked(e){
-    computerPlay();
-
-    if((gameScore >=5 && playerScore >=  3) && (playerScore > cpuScore) ){
+function checkFinish(player,cpu){
+    if(player == 5){
         gameScoreCard.innerText = '';
         gameScoreCard.appendChild(taButton);
         cpuChoiceText.innerHTML = `<h1>GAME OVER!!</h1>`;
         cpuPic.innerText = `YOU WIN!`;
         
-    }else if((gameScore>=5 && cpuScore >= 3) && (cpuScore >  playerScore)){
+    }else if(cpu == 5){
         gameScoreCard.innerText = '';
         gameScoreCard.appendChild(taButton);
         cpuChoiceText.innerHTML = `<h1>GAME OVER!!</h1>`;
         cpuPic.innerText = 'YOU LOSE!';
-    }else{
+    }
+}
+
+
+function playerClicked(e){
+    computerPlay();
+    
         
         if(e.target.id == cpu){    //run the game and show results                       
-            tieScoreCard.innerText = `Ties:  ${drawScore += 1}`
+            tieScoreCard.innerText = `aTies:  ${drawScore += 1}`
             cpuChoiceText.innerHTML = `CPU Chooses:<h3>  TIE!</h3>`;
         }else if(e.target.id == "Rock" && cpu == "Scissors"){
             playerScoreCard.innerText = `Player Score:  ${playerScore += 1}`;
@@ -76,9 +79,9 @@ function playerClicked(e){
         }
     
         gameScoreCard.innerText =` Round:  ${gameScore += 1}`;
-    }
-}
-        
+        checkFinish(playerScore,cpuScore);
+
+}        
         
 
 
