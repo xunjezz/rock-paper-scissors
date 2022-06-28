@@ -42,6 +42,7 @@ h2{
 li{
   flex: 0 0 auto;
   padding: 0 2em 0 2em;
+  touch-action: manipulation none;
 }
 
 #container{
