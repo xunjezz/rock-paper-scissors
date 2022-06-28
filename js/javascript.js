@@ -33,11 +33,11 @@ function playerClicked(e){
     computerPlay();
 
     if((gameScore >=5 && playerScore >=  3) && (playerScore > cpuScore) ){
-        gameScoreCard.innerHTML = 'GAME OVER';
+        gameScoreCard.innerText = '';
         gameScoreCard.appendChild(taButton);
         alert(`GameOver You Win: ${playerScore} to ${cpuScore}, it's OVER! Click Try Again!`);
     }else if((gameScore>=5 && cpuScore >= 3) && (cpuScore >  playerScore)){
-        gameScoreCard.innerHTML = 'GAME OVER';
+        gameScoreCard.innerText = '';
         gameScoreCard.appendChild(taButton);
         alert(`GameOver You Lose: ${cpuScore} to ${playerScore}, it's OVER! Click Try Again!`);
     
