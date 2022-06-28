@@ -16,6 +16,9 @@ images[4] = new Image();
 images[4].src = 'images/PaperClicked-export.png';
 images[5] = new Image();
 images[5].src = 'images/ScissorsClicked-export.png';
+const sounds = [];
+sounds[0] = new Audio();
+sounds[0].src = 'sounds/rock.mp3';
 const taButton = document.createElement('button');
         taButton.innerText = "Try Again?";
         taButton.addEventListener("click", reloadPage);
@@ -52,6 +55,7 @@ clickedScissors.addEventListener('click', playerClicked);
 function playerClicked(e){
     computerPlay();
     changeImage(e);
+    playSound(e);
         
         if(e.target.id == cpu){    //run the game and show results                       
             tieScoreCard.innerText = `Ties:  ${drawScore += 1}`
@@ -140,4 +144,19 @@ function changeImage(e){
         document.getElementById("Scissors").src = images[5].src;
         setTimeout(() =>{document.getElementById("Scissors").src = images[2].src;},200)
     }
-}    
+}   
+
+// const rockSound = new Audio();
+// rockSound.src ="/sounds/rock.mp3";
+// rockSound.onecanplaythrough = function(){
+//     rockSound.readyToRock = true;
+// };
+function playSound(e){
+    if(e.target.id == "Rock"){
+        
+        sounds[0].play();
+        sounds[0].currentTime = 0;
+        
+    }
+}
+
