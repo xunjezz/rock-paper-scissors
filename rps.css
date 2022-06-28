@@ -37,7 +37,7 @@ h2{
   justify-content: center;
   width: 100vw;
   padding: 0;
-  border: 1px solid red;
+  
 }
 li{
   flex: 0 0 auto;
