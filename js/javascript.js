@@ -25,6 +25,7 @@ const cpuChoice = document.getElementById('cpu-choice');
 const cpuChoiceText = document.createElement('p');
 cpuChoiceText.innerText = "CPU Chooses:";
 cpuChoice.appendChild(cpuChoiceText);
+const img = document.querySelector('img');
 
 clickedRock = document.querySelector('#Rock'); //get click from input buttons
 clickedRock.addEventListener('click', playerClicked);
@@ -82,10 +83,13 @@ function playerClicked(e){
 function computerPlay() {     //Generate random # between 1-3
     let randNum = Math.floor(Math.random() * 3 ) + 1;             
         if(randNum == 1){
+            img.src = "./images/Rock-export.png"
             cpu ="Rock";       
         }else if(randNum == 2){
+            img.src = "./images/Paper-export.png"
             cpu = "Paper";
         }else if(randNum == 3){
+            img.src = "./images/Scissors-export.png"
             cpu = "Scissors";
         }      
         return cpu;      

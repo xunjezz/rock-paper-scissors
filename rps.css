@@ -21,7 +21,7 @@ touch-action: manipulation;
   
 }
 *{
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .main-container{
@@ -71,7 +71,7 @@ li{
 p{
   font-size: 1.5rem;
   font-weight: 800;
-  margin:0;
+  margin:.5em;
   
   
 
@@ -87,6 +87,8 @@ button{
   text-shadow: 0 0 15px #f3eeee, 0 0 5px #3c036b ;
 }
 
-#cpu{
+.cpu{
   height:10em;
+  display:flex;
+  gap:2em;
 }
