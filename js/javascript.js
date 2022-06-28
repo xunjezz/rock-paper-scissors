@@ -3,6 +3,19 @@ let drawScore = 0;
 let gameScore = 1;
 let playerScore = 0;
 let cpu = 0;
+const images = [];
+images[0] = new Image();
+images[0].src = 'images/Rock-export.png'; 
+images[1] = new Image();
+images[1].src = 'images/Paper-export.png';
+images[2] = new Image();
+images[2].src = 'images/Scissors-export.png';
+images[3] = new Image();
+images[3].src = 'images/RockClicked-export.png';
+images[4] = new Image();
+images[4].src = 'images/PaperClicked-export.png';
+images[5] = new Image();
+images[5].src = 'images/ScissorsClicked-export.png';
 const taButton = document.createElement('button');
         taButton.innerText = "Try Again?";
         taButton.addEventListener("click", reloadPage);
@@ -38,7 +51,7 @@ clickedScissors.addEventListener('click', playerClicked);
 
 function playerClicked(e){
     computerPlay();
-    
+    changeImage(e);
         
         if(e.target.id == cpu){    //run the game and show results                       
             tieScoreCard.innerText = `Ties:  ${drawScore += 1}`
@@ -113,4 +126,18 @@ function disableButton(){  //disable the inputs after game over
 }
 
     
+function changeImage(e){
     
+    if(e.target.id =="Rock"){
+        document.getElementById("Rock").src = images[3].src;
+        setTimeout(() =>{document.getElementById("Rock").src = images[0].src;},200)
+        
+    }else if(e.target.id =="Paper"){
+        document.getElementById("Paper").src = images[4].src;
+        setTimeout(() =>{document.getElementById("Paper").src = images[1].src;},200)
+    
+    }else if(e.target.id =="Scissors"){
+        document.getElementById("Scissors").src = images[5].src;
+        setTimeout(() =>{document.getElementById("Scissors").src = images[2].src;},200)
+    }
+}    

@@ -18,12 +18,12 @@ padding: 0;
 touch-action: manipulation;
 
   
-  
+
 }
 /* *{ */
   /* border: 1px solid red; */
 /* } */
-
+ 
 .main-container{
   border: 1px solid red;
   height:fit-content;
@@ -53,6 +53,7 @@ h2{
   justify-content: center;
   width: 100vw;
   padding: 0;
+  flex:1;
   
 }
 li{
