@@ -49,7 +49,7 @@ h2{
   list-style-type: none;
   display:flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100vw;
   padding: 0 1em 0 1em;
   flex:1;
@@ -57,7 +57,7 @@ h2{
 }
 li{
   flex: 0 0 auto;
-  padding: 0 0em 0 0em;
+  padding: 0 1em 0 1em;
   touch-action: manipulation;
 }
 
