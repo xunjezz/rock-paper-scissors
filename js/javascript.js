@@ -72,13 +72,13 @@ function playerClicked(e){
 function computerPlay() {     //Generate random # between 1-3
     let randNum = Math.floor(Math.random() * 3 ) + 1;             
         if(randNum == 1){  //create the CPU pick
-            img.src = "./images/Rock-export.png"
+            img.src = "./images/cpuRock-export.png"
             cpu ="Rock";       
         }else if(randNum == 2){
-            img.src = "./images/Paper-export.png"
+            img.src = "./images/cpuPaper-export.png"
             cpu = "Paper";
         }else if(randNum == 3){
-            img.src = "./images/Scissors-export.png"
+            img.src = "./images/cpuScissors-export.png"
             cpu = "Scissors";
         }      
         return cpu;      
