@@ -72,6 +72,9 @@ p{
   font-size: 1.5rem;
   font-weight: 800;
   margin:.5em;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
   
   
 
@@ -90,5 +93,10 @@ button{
 .cpu{
   height:10em;
   display:flex;
-  gap:2em;
+  justify-content: center;
+  align-items: center;
+}
+
+h4{
+  text-shadow: 0 0 15px #f3eeee, 0 0 5px #3c036b ;
 }
