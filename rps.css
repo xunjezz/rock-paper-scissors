@@ -57,7 +57,7 @@ h2{
 }
 li{
   flex: 0 0 auto;
-  padding: 0 2em 0 2em;
+  padding: 0 1em 0 1em;
   touch-action: manipulation;
 }
 
